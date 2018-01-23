@@ -1,0 +1,30 @@
+doctype html
+html(lang="cs")
+  head
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    //- forcing browser to ask for these assets as soon as possible - not suported by IE and EDGE (you need to provide fallback link)
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin-ext" as="style">
+    <link rel="preload" href="content/img/hero.png" as="image">
+    
+    //- fallback plus font which can be requested later
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Roboto+Slab:400,700&amp;subset=latin-ext">
+    
+    title Zbavte se závislosti | bezzavislosti.cz
+  body
+      a(class="c-skip-link" href="#main") Přeskoč na hlavní obsah
+      include components/shared/svg-map.pug
+      header(role="banner" class="c-header")
+        include components/header.pug
+      main(role="main" id="main" tabindex="-1")      
+        section(class="c-section" role="region" tabindex="-1" id="what")
+          include components/what.pug
+        section(class="c-section" role="region" tabindex="-1" id="how")
+          include components/how.pug
+        section(class="c-section" role="region" tabindex="-1" id="contact")
+          include components/contact.pug
+      footer(class="c-section" role="contentinfo" tabindex="-1")
+        include components/footer.pug 
+
+      

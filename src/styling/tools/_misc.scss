@@ -1,0 +1,43 @@
+/*
+  RELATIVE UNITS
+*/
+
+/* 
+- Spacing and font sizes should be relative to the font size which is set by browser (16px usually)
+- Which means that you should use relative unit for 99% cases with some exceptions - (1px border)
+- There is one small exception - media queries shuldbe used with em - some browsers have issues with rem in media queries (Safari)
+- Let's say width is set in px and user will increase the font size - the text will not fit into the container
+- It would be dangerous to set padding in em because em is always relative to the font size feature
+*/
+
+/**
+ * CONVERTOR - wen using em(breakpoints, spacing),rem (font sizes) everything changes proportionally when user will modify browser font size
+ */
+
+$font-size-base: 16px;
+
+@function em($px,$base:$font-size-base) {
+  @return ($px/$base)*1em;
+}
+
+@function rem($px,$base:$font-size-base) {
+   @return ($px/$base)*1rem;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@mixin focus {
+  &:focus {
+    background-color:$color1;
+    outline:rem($base-unit) solid $color1;
+  }
+}

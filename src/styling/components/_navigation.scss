@@ -1,0 +1,39 @@
+.c-navigation {
+  display: flex;
+  overflow: auto;
+  margin-left:rem($base-unit);
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  a {
+    flex:0 0 auto;
+    padding-right: rem($base-unit);
+    padding-left: rem($base-unit);
+    margin-left: rem($base-unit);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    text-transform: uppercase;
+    font-size: rem(14px);
+    line-height: rem($base-unit*6);
+    letter-spacing: .5px;
+    font-weight: 500;
+    text-decoration: none;
+    color: $color3;
+    text-align: center;
+
+    @include focus;
+
+    &:hover {
+      color: $color2;
+      text-decoration: underline;
+    }
+  }
+
+  & &-active {
+    color: $color2;
+    text-decoration: underline;
+  }  
+}

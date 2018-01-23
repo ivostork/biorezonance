@@ -1,0 +1,32 @@
+html {
+  font-size:100%;
+  line-height: 1.5;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  color: $color2;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  //FOIT can't happen in the above the folder section - first impression is really important in this section
+  // this makes all browsers to behave like IE - no FOIT at all
+  //font-display:swap;
+
+  //FOIT can happen but only for a really short time period - 100ms (otherwise FOIT can lasts up to 3s in Chrome)
+  //font-display:fallback;
+
+  //THE MOST ACCESSIBLE WAY
+  //FOIT can happen for an extremly small time period and browser can also descide not to use the external font at all in poor network conditions
+  //The optional value leaves it up to the browser to decide whether to initiate the font download, 
+  //which it may choose not to do or it may do it as a low priority depending on what it thinks would be best for the user. 
+  //This can be beneficial in situations where the user is on a weak connection and pulling down 
+  //a font may not be the best use of resources.
+  font-display:optional;  
+}
+
+@media print {
+  body > *:not(main) {
+      display: none;
+  }
+}
+
+

@@ -1,0 +1,28 @@
+/**
+* GRID - inspired by 8pt grid system (Material Design) and by 8 column system - Joel Beukelman
+ - http://gridcalculator.dk/#/1280/8/16/8
+*/
+
+//base unit is 8px
+
+//1280
+$grid-max-width:rem($base-unit*160);
+$grid-padding:rem($base-unit);
+$grid-columns:strip-unit($base-unit);
+$grid-column-width:1/$grid-columns;
+$grid-gutter:rem($base-unit*2);
+
+.o-grid-container {
+  max-width: $grid-max-width;
+  margin: 0 auto;
+  padding-left:$grid-padding;
+  padding-right: $grid-padding;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.o-grid-row{
+  display:grid;
+  grid-template-columns: repeat($base-unit,$grid-column-width);
+  grid-column-gap: $grid-gutter;
+}

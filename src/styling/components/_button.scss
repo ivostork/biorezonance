@@ -1,0 +1,38 @@
+@mixin btn {
+  //structure
+  display:inline-block;
+  box-sizing: border-box;
+  appearance: none;
+  border:none;
+  text-align: center;
+  text-decoration:none;
+
+  //accessibility
+  min-height:36px;
+  min-width:88px;
+  padding-top:$base-unit;
+  padding-bottom:($base-unit/4)*3;
+  padding-left:$base-unit*2;
+  padding-right:$base-unit*2;
+  border-radius:2px;
+}
+
+.btn-primary {
+  @include btn;  
+  color:$color2;
+  font-size:rem(14px);
+  font-weight: 500;
+  background:$color1;
+  
+  @include focus;
+
+  box-shadow:none;
+  transition: box-shadow .3s;
+  
+  &:hover {
+    box-shadow:     
+    0 1px 5px 0 hsla(360,100%,0%,.20), //ambient shadow
+    0 3px 4px 0 hsla(360,100%,0%,.12), //penumbra
+    0 0 4px 0 hsla(360,100%,0%,.14);//umbra 
+  }
+}

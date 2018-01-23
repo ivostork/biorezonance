@@ -1,0 +1,14 @@
+.c-skip-link {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  opacity:0;
+
+  &:focus {
+    opacity:1;
+    left: 0;
+    z-index: 1;    
+  }  
+  
+  @include focus;
+}

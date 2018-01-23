@@ -1,0 +1,212 @@
+$slideinlenght:20%;
+
+@keyframes slideinFromRight {
+  from {
+    transform:translateX(#{$slideinlenght});
+  }
+
+  to {
+    transform:translateX(0%);
+  }
+}
+
+@mixin slidein {
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes slideinFromLeft {
+  from {
+    transform:translateX(#{$slideinlenght*-1});
+  }
+
+  to {
+    transform:translateX(0%);
+  }
+}
+
+
+.c-header {
+  box-sizing: border-box;
+  padding-top: rem($base-unit);
+  border-top: $color1 rem($base-unit) solid;
+  overflow: hidden;
+  position: relative;
+
+
+  &:before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background:$color5;
+
+    transform-origin:top left;
+    transform:skewY(-4deg);
+  }
+
+  & &-grid-container {
+    padding-left:0;
+    padding-right:0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  & &-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left:$base-unit;
+    padding-right:$base-unit;
+  }
+
+    & &-logolink {
+      color:$color2;
+      outline:none;
+      @include focus;
+
+      text-decoration:none;
+
+      &:hover {
+        text-decoration:underline;
+      }
+    }
+
+      & &-logo {
+        font-size: rem(20px);
+        line-height: rem($base-unit * 6);
+        font-weight: 500;
+
+        @media screen and (max-width:$tablet) {
+          display:none;
+        }
+      }
+
+      & &-logomobile {
+        display:none;    
+        @media screen and (max-width:$tablet) {
+          flex:0 0 rem(46px);
+          display: block;
+          width:rem(46px);
+          height:rem(46px);
+        }
+      }
+    
+    & &-row{
+      display: grid;
+      grid-template-columns: auto auto;
+      padding-top:rem(8*$base-unit);
+
+      @media screen and (max-width:$desktop-sm) {
+        display: block;
+        position: relative;
+      }
+
+      grid-template-rows: 1fr auto auto auto auto 1fr;
+    }
+    
+    & &-heroimage {
+      max-height: calc(100vh - #{rem(8*$base-unit)});
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;      
+      justify-self: right;
+      z-index: 1;
+      img {
+        max-height: calc(100vh - #{rem(8*$base-unit)});
+        max-width: 100%;
+
+        animation-name: slideinFromLeft;        
+        @include slidein;
+        animation-duration: .3s;
+                
+        @media screen and (max-width:$desktop-sm) {
+          max-width:none;
+          display: block;
+          margin:auto; 
+          transform: translateX(-15%);
+          animation: none;
+        }
+        
+      }
+    }
+
+    & &-herodisplay1,
+    & &-herodisplay2,
+    & &-herodisplay3,
+    & &-herocopy {
+      grid-column:2 / 3;
+      margin-left: rem($base-unit*(-16));
+    }
+
+    & &-herodisplay1,
+    & &-herodisplay2,
+    & &-herodisplay3 {
+      font-size:rem(112px);
+      font-weight:bold;
+      line-height: 1;
+
+      animation-name: slideinFromRight;
+      @include slidein;
+
+      @media screen and (max-width:$desktop-sm) {
+        animation: none;
+        display: none;
+      }
+    }
+
+    & &-herodisplay1 {
+      grid-row: 2 / 3;      
+      font-size: rem(104px);
+    }
+
+    & &-herodisplay2 {
+      grid-row: 3 / 4;
+      z-index: 1;
+      text-shadow: 
+        0 11px 15px hsla(360,100%,0%,.20), //umbra
+        0 9px 46px hsla(360,100%,0%,.12), //penumbra
+        0 24px 38px hsla(360,100%,0%,.14); //ambient shadow
+        animation-duration: .3s;
+    }
+
+    & &-herodisplay3 {
+      grid-row: 4 / 5;
+      font-size: rem(104px);
+    }
+
+    & &-herocopy {
+      grid-row:5 / 6;
+      z-index: 1;
+      margin-top:rem($base-unit);
+
+      .subheading {
+        display: none;
+      }
+      
+      p {
+        margin-bottom: rem($base-unit*3);
+      }
+
+      @media screen and (max-width:$desktop-sm) {
+        margin:0;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        
+        .subheading {
+          display: block;
+          font-weight: 500;
+          margin-bottom: rem($base-unit*3);        
+        }
+        
+      }
+    }
+}    
+

@@ -1,0 +1,30 @@
+.o-grid-container
+
+  .c-header-grid-container
+       
+    .c-header-navigation
+      
+      a(href="#home" class="c-header-logolink") 
+        span.c-header-logo bezzavislosti.cz
+    
+        <svg class="c-header-logomobile">
+          <use xlink:href="#logo"></use>
+        </svg>
+      
+      include shared/navigation.pug
+  
+    .c-header-row
+      div(class="c-header-heroimage")
+        img(src='./content/img/hero.png' alt="Skákající muž")
+          
+      div(class="c-header-herodisplay1" aria-hidden="true") ZBAVTE
+      div(class="c-header-herodisplay2" aria-hidden="true") SE 
+      div(class="c-header-herodisplay3" aria-hidden="true") ZÁVISLOSTI
+      
+      h1(class="u-sr-only") Zbavte se závislosti
+
+      div(class="c-header-herocopy") 
+        span(class="subheading" aria-hidden="true") Zbavte se závislosti
+        p Odnaučíme Vás kouřit s biorezonancí.
+        a(class="btn-primary" href="#kontakt") KONTAKT
+
