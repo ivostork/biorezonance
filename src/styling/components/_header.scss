@@ -30,8 +30,6 @@ $slideinlenght:20%;
 
 .c-header {
   box-sizing: border-box;
-  padding-top: rem($base-unit);
-  border-top: $color1 rem($base-unit) solid;
   overflow: hidden;
   position: relative;
 
@@ -61,7 +59,6 @@ $slideinlenght:20%;
     & &-row{
       display: grid;
       grid-template-columns: auto auto;
-      padding-top:rem(8*$base-unit);
 
       @media screen and (max-width:$desktop-sm) {
         display: block;
