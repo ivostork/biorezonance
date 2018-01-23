@@ -57,6 +57,12 @@ $slideinlenght:20%;
     position: relative;
     z-index: 1;
   }
+
+  & &-navigation-fixed {
+    position: fixed;
+    left:0;
+    right:0;
+  }
   
   & &-navigation {
     display: flex;

@@ -1,17 +1,21 @@
 .o-grid-container
 
   .c-header-grid-container
-       
-    .c-header-navigation
-      
-      a(href="#home" class="c-header-logolink") 
-        span.c-header-logo bezzavislosti.cz
     
-        <svg class="c-header-logomobile">
-          <use xlink:href="#logo"></use>
-        </svg>
-      
-      include shared/navigation.pug
+    .c-header-navigation-sticky
+
+      .o-grid-container
+
+        .c-header-navigation
+          
+          a(href="#home" class="c-header-logolink") 
+            span.c-header-logo bezzavislosti.cz
+        
+            <svg class="c-header-logomobile">
+              <use xlink:href="#logo"></use>
+            </svg>
+          
+          include shared/navigation.pug
   
     .c-header-row
       div(class="c-header-heroimage")
