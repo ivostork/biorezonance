@@ -1,7 +1,22 @@
-nav(role="navigation" class="c-navigation" aria-label="hlavni navigace stranky")
+.o-grid-container
 
-  a(href="#what") O nás
+  .c-navigation
 
-  a(href="#how") Technologie
+    .c-navigation-sticky
 
-  a(href="#contact") Kontakt
+      .c-navigation-flex
+        
+        a(href="#home" class="c-navigation-logolink") 
+          span.c-navigation-logo bezzavislosti.cz
+      
+          <svg class="c-navigation-logomobile">
+            <use xlink:href="#logo"></use>
+          </svg>
+
+        nav(role="navigation" class="c-navigation-list" aria-label="hlavni navigace stranky")
+
+          a(href="#what") O nás
+
+          a(href="#how") Technologie
+
+          a(href="#contact") Kontakt

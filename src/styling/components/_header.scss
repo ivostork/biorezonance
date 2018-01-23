@@ -57,53 +57,7 @@ $slideinlenght:20%;
     position: relative;
     z-index: 1;
   }
-
-  & &-navigation-fixed {
-    position: fixed;
-    left:0;
-    right:0;
-  }
-  
-  & &-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left:$base-unit;
-    padding-right:$base-unit;
-  }
-
-    & &-logolink {
-      color:$color2;
-      outline:none;
-      @include focus;
-
-      text-decoration:none;
-
-      &:hover {
-        text-decoration:underline;
-      }
-    }
-
-      & &-logo {
-        font-size: rem(20px);
-        line-height: rem($base-unit * 6);
-        font-weight: 500;
-
-        @media screen and (max-width:$tablet) {
-          display:none;
-        }
-      }
-
-      & &-logomobile {
-        display:none;    
-        @media screen and (max-width:$tablet) {
-          flex:0 0 rem(46px);
-          display: block;
-          width:rem(46px);
-          height:rem(46px);
-        }
-      }
-    
+      
     & &-row{
       display: grid;
       grid-template-columns: auto auto;

@@ -1,39 +1,87 @@
 .c-navigation {
-  display: flex;
-  overflow: auto;
-  margin-left:rem($base-unit);
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
 
-  a {
-    flex:0 0 auto;
-    padding-right: rem($base-unit);
-    padding-left: rem($base-unit);
-    margin-left: rem($base-unit);
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    text-transform: uppercase;
-    font-size: rem(14px);
-    line-height: rem($base-unit*6);
-    letter-spacing: .5px;
-    font-weight: 500;
-    text-decoration: none;
-    color: $color3;
-    text-align: center;
-
-    @include focus;
-
-    &:hover {
-      color: $color2;
-      text-decoration: underline;
-    }
+  & &-sticky {
+    position: sticky;
+    top:0;
   }
-
-  & &-active {
-    color: $color2;
-    text-decoration: underline;
-  }  
+  
+    & &-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left:$base-unit;
+      padding-right:$base-unit;
+    }
+    
+      & &-logolink {
+        color:$color2;
+        outline:none;
+        @include focus;
+    
+        text-decoration:none;
+    
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+    
+        & &-logo {
+          font-size: rem(20px);
+          line-height: rem($base-unit * 6);
+          font-weight: 500;
+    
+          @media screen and (max-width:$tablet) {
+            display:none;
+          }
+        }
+    
+        & &-logomobile {
+          display:none;    
+          @media screen and (max-width:$tablet) {
+            flex:0 0 rem(46px);
+            display: block;
+            width:rem(46px);
+            height:rem(46px);
+          }
+        }
+  
+      & &-list {
+        display: flex;
+        overflow: auto;
+        margin-left:rem($base-unit);
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      
+        a {
+          flex:0 0 auto;
+          padding-right: rem($base-unit);
+          padding-left: rem($base-unit);
+          margin-left: rem($base-unit);
+      
+          &:first-child {
+            margin-left: 0;
+          }
+      
+          text-transform: uppercase;
+          font-size: rem(14px);
+          line-height: rem($base-unit*6);
+          letter-spacing: .5px;
+          font-weight: 500;
+          text-decoration: none;
+          color: $color3;
+          text-align: center;
+      
+          @include focus;
+      
+          &:hover {
+            color: $color2;
+            text-decoration: underline;
+          }
+        }
+      
+        & &-active {
+          color: $color2;
+          text-decoration: underline;
+        }  
+      }
 }
