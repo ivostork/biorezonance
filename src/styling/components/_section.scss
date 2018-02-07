@@ -3,4 +3,17 @@
   &:focus {
     outline:none;
   }
+
+  & &-copy {
+    grid-column:1 / 4;  
+    align-self: center;
+  }
+
+  & &-img {
+    grid-column:5 / 8;
+    align-self: center;
+  }
 }
+
+
+
