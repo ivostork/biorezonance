@@ -37,7 +37,7 @@ $font-size-base: 16px;
 
 @mixin focus {
   &:focus {
-    background-color:$color1;
-    outline:rem($base-unit) solid $color1;
+    background-color:$yellow;
+    outline:rem($base-unit) solid $yellow;
   }
 }
