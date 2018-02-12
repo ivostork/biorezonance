@@ -14,7 +14,7 @@
   }
   
     & &-logolink {
-      color:$color2;
+      color:$text1;
       outline:none;
       @include focus;
   
@@ -74,13 +74,13 @@
         @include focus;
     
         &:hover {
-          color: $color2;
+          color: $text1;
           text-decoration: underline;
         }
       }
     
       & &-active {
-        color: $color2;
+        color: $text1;
         text-decoration: underline;
       }  
     }
