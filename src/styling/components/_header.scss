@@ -1,4 +1,4 @@
-$slideinlenght:20%;
+$slideinlenght:100%;
 
 @keyframes slideinFromRight {
   from {
@@ -11,20 +11,8 @@ $slideinlenght:20%;
 }
 
 @mixin slidein {
-  animation-duration: .5s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
-}
-
-
-@keyframes slideinFromLeft {
-  from {
-    transform:translateX(#{$slideinlenght*-1});
-  }
-
-  to {
-    transform:translateX(0%);
-  }
 }
 
 
@@ -73,15 +61,15 @@ $slideinlenght:20%;
       grid-column: 1 / 2;
       grid-row: 1 / -1;      
       justify-self: right;
-      z-index: 1;
+  
       img {
         max-height: calc(100vh - #{rem(8*$base-unit)});
         max-width: 100%;
-        margin-left:20%;
+        margin-left:30%;
 
-        animation-name: slideinFromLeft;        
+        animation-name: slideinFromRight;        
         @include slidein;
-        animation-duration: .3s;
+        animation-duration: .5s;
                 
         @media screen and (max-width:$desktop-sm) {
           max-width:none;
@@ -112,6 +100,7 @@ $slideinlenght:20%;
 
       animation-name: slideinFromRight;
       @include slidein;
+      animation-duration: .8s;
 
       @media screen and (max-width:$desktop-sm) {
         animation: none;
@@ -134,8 +123,8 @@ $slideinlenght:20%;
 
     & &-herodisplay2 {
       grid-row: 3 / 4;
-      z-index: 1;      
-      animation-duration: .3s;
+      // z-index: 1;      
+      // animation-duration: .3s;
     }
 
     & &-herodisplay3 {
