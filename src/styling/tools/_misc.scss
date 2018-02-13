@@ -41,3 +41,16 @@ $font-size-base: 16px;
     outline:rem($base-unit) solid $yellow;
   }
 }
+
+
+//gogle maerial design shadow
+@function shadow24dp() {
+  //umbra
+  //penumbra
+  //ambient shadow
+
+  @return 
+    0 11px 15px hsla(0,0%,0%,.20), 
+    0 9px 46px hsla(0,0%,0%,.12), 
+    0 24px 38px hsla(0,0%,0%,.14);
+}
