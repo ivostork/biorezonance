@@ -19,10 +19,10 @@
 
 .btn-primary {
   @include btn;  
-  color:$text1;
+  color:$background1;
   font-size:rem(14px);
   font-weight: 500;
-  background:$yellow;
+  background:$purple;
   
   @include focus;
 
@@ -30,9 +30,11 @@
   transition: box-shadow .3s;
   
   &:hover {
-    box-shadow:     
-    0 1px 5px 0 hsla(360,100%,0%,.20), //ambient shadow
-    0 3px 4px 0 hsla(360,100%,0%,.12), //penumbra
-    0 0 4px 0 hsla(360,100%,0%,.14);//umbra 
+    // box-shadow:     
+    // 0 1px 5px 0 hsla(360,100%,0%,.20), //ambient shadow
+    // 0 3px 4px 0 hsla(360,100%,0%,.12), //penumbra
+    // 0 0 4px 0 hsla(360,100%,0%,.14);//umbra 
+
+    box-shadow:shadow24dp();
   }
 }

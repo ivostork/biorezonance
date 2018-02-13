@@ -69,7 +69,7 @@ $slideinlenght:100%;
 
         animation-name: slideinFromRight;        
         @include slidein;
-        animation-duration: .5s;
+        animation-duration: .4s;
                 
         @media screen and (max-width:$desktop-sm) {
           max-width:none;
@@ -123,8 +123,6 @@ $slideinlenght:100%;
 
     & &-herodisplay2 {
       grid-row: 3 / 4;
-      // z-index: 1;      
-      // animation-duration: .3s;
     }
 
     & &-herodisplay3 {
