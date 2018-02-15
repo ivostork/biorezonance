@@ -13,4 +13,30 @@
     grid-column:5 / 8;
     align-self: center;
   }
+
+  & &-display {
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(40px);
+  }
+
+    & &-number {
+      font-size: rem(160px);
+      font-weight:500;
+      letter-spacing: rem(-16px);
+      line-height: 0.7;
+      color:$background1;
+      text-indent:rem(-16px);
+      background: $yellow;
+      flex:0 0 rem(300px);
+    }
+
+    & &-display-copy {
+      font-size: rem(34px);
+      font-weight: bold;
+      text-shadow: shadow24dp();
+      line-height: 0.7;
+      flex:1 0 0px;
+      margin-left:rem(-170px);
+    }
 }
