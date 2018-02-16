@@ -8,8 +8,6 @@
 //1280
 $grid-max-width:rem($base-unit*160);
 $grid-padding:rem($base-unit);
-$grid-columns:strip-unit($base-unit);
-$grid-column-width:1/$grid-columns;
 $grid-gutter:rem($base-unit*2);
 
 .o-grid-container {
@@ -23,6 +21,6 @@ $grid-gutter:rem($base-unit*2);
 
 .o-grid-row{
   display:grid;
-  grid-template-columns: repeat($base-unit,$grid-column-width);
+  grid-template-columns: repeat(8,1fr);
   grid-column-gap: $grid-gutter;
 }

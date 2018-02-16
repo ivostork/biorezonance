@@ -5,13 +5,22 @@
   }
 
   & &-copy {
-    grid-column:1 / 4;  
-    align-self: center;
+    grid-column:1 / span 4;  
+    align-self: center; 
+    
+    @media screen and (max-width:$tablet) {
+      grid-column:1 / span 8;
+    }
   }
 
   & &-img {
-    grid-column:5 / 8;
+    grid-column:5 / span 4;
     align-self: center;
+    justify-self:center;
+
+    @media screen and (max-width:$tablet) {
+      display:none;
+    }
   }
 
   & &-display {
