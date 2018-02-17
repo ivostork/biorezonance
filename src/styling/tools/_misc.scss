@@ -43,6 +43,10 @@ $font-size-base: 16px;
 }
 
 
+@mixin font2 {
+  font-family: 'Roboto Slab', TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif
+}
+
 //gogle maerial design shadow
 @function shadow24dp() {
   //ambient shadow
