@@ -1,0 +1,22 @@
+.c-list {
+  list-style: none;
+
+  li {
+    position: relative;
+    margin-bottom: rem(4px);
+    padding-left:rem(22px);
+
+    &:before {
+      content:"";
+      width:rem(8px);
+      height:rem(8px);
+      position: absolute;
+      top:rem(10px);
+      left:0;
+      border-radius: 100%;
+      background-color: currentColor;
+    }
+  }
+
+
+}

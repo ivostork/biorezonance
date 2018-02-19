@@ -18,9 +18,3 @@ $grid-gutter:rem($base-unit*2);
   box-sizing: border-box;
   overflow: hidden;
 }
-
-.o-grid-row{
-  display:grid;
-  grid-template-columns: repeat(8,1fr);
-  grid-column-gap: $grid-gutter;
-}

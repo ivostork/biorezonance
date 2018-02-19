@@ -29,4 +29,11 @@ html {
   }
 }
 
+// Vertical rhythm
+p,
+ul,
+ol {
+  margin-bottom: rem($base-unit*2);
+}
+
 
