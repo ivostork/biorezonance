@@ -17,13 +17,10 @@
   border-radius:2px;
 }
 
-.btn-primary {
-  @include btn;  
-  color:$background1;
+@mixin btn-brand {
   font-size:rem(14px);
   font-weight: 500;
-  background:$purple;
-  
+
   @include focus;
 
   box-shadow:none;
@@ -37,4 +34,21 @@
 
     box-shadow:shadow24dp();
   }
+}
+
+.btn-primary {
+  @include btn;  
+  @include btn-brand;
+
+  color:$background1;  
+  background-color:$purple; 
+}
+
+.btn-secondary {
+  @include btn; 
+  @include btn-brand;
+  
+  background-color:$background1;
+  color:$purple;
+  border:1px solid $purple;
 }

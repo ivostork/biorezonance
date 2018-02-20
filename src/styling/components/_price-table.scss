@@ -1,0 +1,90 @@
+@mixin card {
+  display: flex;
+  flex-direction: column;
+
+  padding:rem(32px);
+  background-color: $background2;    
+}
+
+.price-table {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+  grid-template-areas:"margin-left card1 card2 card3 margin-right";
+  grid-column-gap: rem(24px);  
+
+  [class^="price-table-card"]{
+    @include card;
+  }
+  
+  & &-card1 {
+    grid-area: card1;
+  }
+
+  & &-card2 {
+    grid-area:card2;
+    box-shadow:shadow24dp();
+  }
+
+  & &-card3 {
+    grid-area:card3;
+  }
+    & &-action {
+      text-align: center;
+    }
+
+    & &-content {
+      flex:1 0 1px;
+      text-align: center;
+      margin-bottom: rem(24px);
+    }
+
+      & &-title {
+        max-width: rem(170px);
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom: rem(16px);
+        padding-bottom: rem(16px);
+
+        font-weight: normal;
+        border-bottom:1px solid $text3;                
+      }
+
+        & &-price {
+          display: flex;
+          align-items:baseline;
+          justify-content: center;
+
+          margin-bottom: rem(16px);
+        }
+
+          & &-value {
+            font-size: rem(56px);
+            font-weight: 500;
+            line-height: 1;
+          }
+
+          & &-currency {
+            font-size: rem(12px);
+            color:$text3;
+          }
+
+        & &-feature {
+          margin-bottom: rem(8px);
+          text-align: center;
+          font-size: rem(12px);
+          font-style: italic;
+          color:$text3;
+        }
+
+
+
+
+
+    & &-action {
+      flex:0 0 1px;
+    }  
+
+    
+
+
+}
