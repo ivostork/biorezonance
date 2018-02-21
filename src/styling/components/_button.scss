@@ -48,7 +48,7 @@
   @include btn; 
   @include btn-brand;
   
-  background-color:$background1;
+  background-color:hsla(0,0%,0%,.01);
   color:$purple;
   border:1px solid $purple;
 }

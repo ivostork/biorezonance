@@ -1,0 +1,25 @@
+.c-section-title {
+  
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(40px);
+  
+
+    & &-number {
+      font-size: rem(160px);
+      font-weight:500;
+      letter-spacing: rem(-16px);
+      line-height: 0.9;
+      color:$background1;
+      text-indent:rem(-16px);
+      background: $yellow;
+      flex:0 0 rem(300px);
+    }
+
+    & &-copy {
+      font-size: rem(34px);
+      font-weight: bold;
+      text-shadow: text-shadow24dp();
+      margin-left:rem(-170px);
+    }
+}

@@ -47,6 +47,19 @@ $font-size-base: 16px;
   font-family: 'Roboto Slab', TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif
 }
 
+@mixin skewed-background {
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:$background2;
+  transform:skewY(-4deg);
+}
+
 //gogle maerial design shadow
 @function text-shadow2dp() {
   //ambient shadow

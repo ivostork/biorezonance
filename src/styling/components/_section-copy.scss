@@ -1,0 +1,34 @@
+.c-section-copy {
+  margin-top:$base-unit*10;
+
+  & &-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $grid-gutter;
+    align-items: center;
+  }
+
+  &:focus {
+    outline:none;
+  }
+
+  & &-copy {
+    @media screen and (max-width:$tablet) {
+      grid-column:1 / span 2;
+    }
+  }
+
+    & &-content {
+      @include font2;
+      line-height:1.75;
+      color:$text3;
+    }
+
+  & &-img {    
+    justify-self:center;
+
+    @media screen and (max-width:$tablet) {
+      display:none;
+    }
+  }  
+}

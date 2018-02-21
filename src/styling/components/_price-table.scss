@@ -6,27 +6,45 @@
   background-color: $background2;    
 }
 
-.price-table {
+.price-table {  
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-  grid-template-areas:"margin-left card1 card2 card3 margin-right";
-  grid-column-gap: rem(24px);  
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr;  
+  grid-gap: rem(24px);  
+
+  grid-template-areas:
+    ". a b c .";
+
+  @media screen and (max-width:$desktop-sm) {
+    grid-template-areas:
+    ". a a a ."
+    ". b b b ."
+    ". c c c .";
+  }
+
+  @media screen and (max-width:$mobile) {
+    grid-template-areas:
+    "a a a a a"
+    "b b b b b"
+    "c c c c c";
+  }
+
+  margin-top:rem(40px);
 
   [class^="price-table-card"]{
     @include card;
   }
   
   & &-card1 {
-    grid-area: card1;
+    grid-area: a;
   }
 
   & &-card2 {
-    grid-area:card2;
+    grid-area:b;
     box-shadow:box-shadow24dp();    
   }
 
   & &-card3 {
-    grid-area:card3;
+    grid-area:c;
   }
     & &-action {
       text-align: center;
