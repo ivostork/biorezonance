@@ -5,6 +5,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: $grid-gutter;
+    align-items: center;
   }
 
   &:focus {
@@ -12,7 +13,6 @@
   }
 
   & &-copy {
-    align-self: center;     
     @media screen and (max-width:$tablet) {
       grid-column:1 / span 2;
     }
@@ -24,8 +24,7 @@
       color:$text3;
     }
 
-  & &-img {
-    align-self: center;
+  & &-img {    
     justify-self:center;
 
     @media screen and (max-width:$tablet) {
@@ -53,7 +52,7 @@
     & &-display-copy {
       font-size: rem(34px);
       font-weight: bold;
-      text-shadow: shadow24dp();
+      text-shadow: text-shadow24dp();
       margin-left:rem(-170px);
     }
 }
