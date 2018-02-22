@@ -14,33 +14,32 @@ html(lang="cs")
     title Zbavte se závislosti | bezzavislosti.cz
   
   body
+    include components/shared/svg-map.pug
 
-      a(class="c-skip-link" href="#main") Přeskoč na hlavní obsah
-      
-      include components/shared/svg-map.pug
+    a(class="c-skip-link" href="#main") Přeskoč na hlavní obsah        
 
-      include components/shared/navigation.pug      
-      
-      header(role="banner" class="c-header")
-      
-        include components/header.pug
-      
-      main(role="main" id="main" tabindex="-1")      
-      
-        section(class="c-section-copy" role="region" tabindex="-1" id="what")
-      
-          include components/what.pug
-      
-        section(class="c-section-copy" role="region" tabindex="-1" id="how")
-      
-          include components/how.pug
-      
-        section(class="c-section-contact" role="region" tabindex="-1" id="contact")
-      
-          include components/contact.pug
-            
-      footer(class="c-section-footer" role="contentinfo" tabindex="-1")
-      
-        include components/footer.pug 
+    include components/shared/navigation.pug      
+    
+    header(role="banner" class="c-header")
+    
+      include components/header.pug
+    
+    main(role="main" id="main" tabindex="-1")      
+    
+      section(class="c-section-copy" role="region" tabindex="-1" id="what")
+    
+        include components/what.pug
+    
+      section(class="c-section-copy" role="region" tabindex="-1" id="how")
+    
+        include components/how.pug
+    
+      section(class="c-section-contact" role="region" tabindex="-1" id="contact")
+    
+        include components/contact.pug
+          
+    footer(class="c-section-footer" role="contentinfo" tabindex="-1")
+    
+      include components/footer.pug 
 
       
