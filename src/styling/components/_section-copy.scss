@@ -1,21 +1,36 @@
 .c-section-copy {
   margin-top:$base-unit*10;
 
-  & &-grid{
-    display:grid;
+  @mixin grid-structue {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: $grid-gutter;
-    align-items: center;
+    grid-column-gap: $grid-gutter; 
+    align-items:center;
+
+    @media screen and (max-width:$tablet) {
+      grid-template-areas: 
+      "copy copy";
+    } 
+  }
+
+  & &-grid1{
+    @include grid-structue;
+    grid-template-areas: 
+      "copy im";   
+  }
+
+  & &-grid2{
+    @include grid-structue;
+    grid-template-areas: 
+      "im copy";    
   }
 
   &:focus {
     outline:none;
   }
 
-  & &-copy {
-    @media screen and (max-width:$tablet) {
-      grid-column:1 / span 2;
-    }
+  & &-copy-desc {
+    grid-area:copy;
   }
 
     & &-content {
@@ -26,6 +41,7 @@
 
   & &-img {    
     justify-self:center;
+    grid-area: im;
 
     @media screen and (max-width:$tablet) {
       display:none;

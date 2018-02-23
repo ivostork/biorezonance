@@ -1,29 +1,31 @@
-.o-grid-container 
+.c-section-copy
 
-  .c-section-copy-grid
+  .o-grid-container 
 
-    div
+    .c-section-copy-grid1
 
-      h2.c-section-title 
-        span(class="c-section-title-number" aria-hidden="true") 01
-        span.c-section-title-copy CO DĚLÁME?
+      div.c-section-copy-desc
 
-      .c-section-copy-content
+        h2.c-section-title 
+          span(class="c-section-title-number" aria-hidden="true") 01
+          span.c-section-title-copy CO DĚLÁME?
 
-        p Rádi byste přestali kouřit, ale nevíte jak? Nabízíme pomoc při odvykání kouření pomoci biorezonanční terapie. Biorezonanční metoda je bezbolestná a nemá negativní účinky na organismus. 
+        .c-section-copy-content
+
+          p Rádi byste přestali kouřit, ale nevíte jak? Nabízíme pomoc při odvykání kouření pomoci biorezonanční terapie. Biorezonanční metoda je bezbolestná a nemá negativní účinky na organismus. 
+          
+          p Tělo není nikdy vystaveno jakémukoliv druhu proudu. Počítačová zařízení Bicom jsou vyráběna v Německu od roku 1977.
+
+          p.u-mb-4 Co vše děláme?
+
+          ul.c-list 
+            li odvykání kouření
+            li eliminace chuti na sladké a alkohol
+
+      .c-section-copy-img
+        picture
+          source(srcset=imgUrl+'face1.webp, '+imgUrl+'face1@2.webp 2x' data-src1=imgUrl+'face1.webp' data-src2=imgUrl+'face1@2.webp' type='image/webp')
+          source(srcset=imgUrl+'face1.jpg, '+imgUrl+'face1@2.jpg 2x' data-src1=imgUrl+'face1.jpg' data-src2=imgUrl+'face1@2.jpg' type='image/jpg')
+          img(src='./content/img/face1.jpg' type='image/jpg') 
         
-        p Tělo není nikdy vystaveno jakémukoliv druhu proudu. Počítačová zařízení Bicom jsou vyráběna v Německu od roku 1977.
-
-        p.u-mb-4 Co vše děláme?
-
-        ul.c-list 
-          li odvykání kouření
-          li eliminace chuti na sladké a alkohol
-
-    .c-section-copy-img
-      picture
-        source(srcset=imgUrl+'face1.webp, '+imgUrl+'face1@2.webp 2x' data-src1=imgUrl+'face1.webp' data-src2=imgUrl+'face1@2.webp' type='image/webp')
-        source(srcset=imgUrl+'face1.jpg, '+imgUrl+'face1@2.jpg 2x' data-src1=imgUrl+'face1.jpg' data-src2=imgUrl+'face1@2.jpg' type='image/jpg')
-        img(src='./content/img/face1.jpg' type='image/jpg') 
-      
-      
+        
