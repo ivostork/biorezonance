@@ -9,42 +9,38 @@
 
     @media screen and (max-width:$tablet) {
       grid-template-areas: 
-      "copy copy";
+      "co co";
     } 
   }
 
   & &-grid1{
-    @include grid-structue;
     grid-template-areas: 
-      "copy im";   
+      "co im";
+    @include grid-structue;       
   }
 
   & &-grid2{
-    @include grid-structue;
     grid-template-areas: 
-      "im copy";    
+      "im co";
+    @include grid-structue;        
   }
 
-  &:focus {
-    outline:none;
-  }
-
-  & &-copy-desc {
-    grid-area:copy;
-  }
-
-    & &-content {
-      @include font2;
-      line-height:1.75;
-      color:$secondary-text-d;
+    & &-desc {
+      grid-area:co;
     }
 
-  & &-img {    
-    justify-self:center;
-    grid-area: im;
+      & &-content {
+        @include font2;
+        line-height:1.75;
+        color:$secondary-text-d;
+      }
 
-    @media screen and (max-width:$tablet) {
-      display:none;
-    }
-  }  
+    & &-img {    
+      justify-self:center;
+      grid-area:im;
+
+      @media screen and (max-width:$tablet) {
+        display:none;
+      }
+    }  
 }
