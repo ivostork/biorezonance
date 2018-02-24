@@ -64,7 +64,7 @@
         padding-bottom: rem(16px);
 
         font-weight: normal;
-        border-bottom:1px solid $text3;                
+        border-bottom:1px solid $divider-d;                
       }
 
         & &-price {
@@ -83,7 +83,7 @@
 
           & &-currency {
             font-size: rem(12px);
-            color:$text3;
+            color:$hint-text-d;
           }
 
         & &-feature {
@@ -91,7 +91,7 @@
           text-align: center;
           font-size: rem(12px);
           font-style: italic;
-          color:$text3;
+          color:$secondary-text-d;
         }
 
 
