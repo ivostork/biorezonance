@@ -21,7 +21,7 @@
     ". c c c .";
   }
 
-  @media screen and (max-width:$mobile) {
+  @media screen and (max-width:$tablet) {
     grid-template-areas:
     "a a a a a"
     "b b b b b"

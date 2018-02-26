@@ -7,7 +7,7 @@
         span(class="c-section-title-number" aria-hidden="true") 03
         span.c-section-title-copy NAPIŠTE NÁM
     
-    form
+    form.u-mb-80
       .c-section-contact-grid
         .c-form-group.c-section-contact-name
           label(for="name") Jméno
@@ -23,17 +23,23 @@
 
           input(type="submit" class="btn-primary" value="ODEŠLI")
     
-    .c-section-contact-map
+    .c-section-contact-grid2
       .c-section-contact-address
-        h3.c-section-contact-subheading ADRESA POBOČKY
+        h3.c-section-contact-subheading POBOČKA
 
-        .c-section-contact-place
-          p
-           strong
-          p Poliklinika Lesná (1.patro)
-          p Halasovo nám. 597/1
-        
-        .c-section-contact-person
+        div(class="c-section-contact-place")
+          address
+            p.c-section-contact-city
+              strong Brno
+            p Poliklinika Lesná (1.patro)
+            p.u-mb-16 Halasovo nám. 597/1
+          div
+            p.c-section-contact-person
+              strong Bc. Milan Favorit
+            p +420 111 111 111
+            p.u-mb-0 bezzavislosti@seznam.cz
+      
+      div(class="c-section-contact-map" id="map")
 
 
         

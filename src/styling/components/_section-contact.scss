@@ -28,6 +28,10 @@
     & &-title {
       display: flex;
       justify-content:center;
+
+      @media screen and (max-width:$tablet) {
+        // justify-content: flex-start;
+      }
     }
 
     & &-grid {
@@ -46,7 +50,7 @@
         ". c c .";
       }
     
-      @media screen and (max-width:$mobile) {
+      @media screen and (max-width:$tablet) {
         grid-template-areas:
         "a a a a"
         "b b b b"
@@ -67,4 +71,41 @@
       & &-message {
         grid-area: c;
       }    
+
+    & &-grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      
+      @media screen and (max-width:$tablet) {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }      
+    }
+    
+      & &-address {
+        background-color:$yellow;
+        padding: rem(32px);
+      }
+
+        & &-subheading {
+          font-size: rem(34px);
+          font-weight: bold;
+          margin-bottom: rem(16px);
+        }
+
+        & &-place {
+          address{font-style:normal;}
+          color:$secondary-text-d;
+          @include font2;          
+
+          p {
+            margin-bottom: rem(8px);
+          }
+        }
+
+          & &-city,
+          & &-person {
+            color:$primary-text-d;
+          }
 }
