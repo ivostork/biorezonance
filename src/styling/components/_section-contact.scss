@@ -29,8 +29,8 @@
       display: flex;
       justify-content:center;
 
-      @media screen and (max-width:$tablet) {
-        // justify-content: flex-start;
+      @media screen and (max-width:$mobile) {
+        justify-content: flex-start;
       }
     }
 

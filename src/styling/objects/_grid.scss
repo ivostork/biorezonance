@@ -10,10 +10,18 @@ $grid-max-width:rem($base-unit*160);
 $grid-padding:rem($base-unit);
 $grid-gutter:rem($base-unit*2);
 
-.o-grid-container {
+@mixin container {
   max-width: $grid-max-width;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.o-grid-container {
+  @include container;
   padding-left:$grid-padding;
   padding-right: $grid-padding;
-  box-sizing: border-box;
+}
+
+.o-grid-container2 {
+  @include container;
 }
