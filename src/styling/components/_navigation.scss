@@ -13,38 +13,6 @@
     padding-right:$base-unit;
   }
   
-    & &-logolink {
-      color:$primary-text-d;
-      outline:none;
-      @include focus;
-  
-      text-decoration:none;
-  
-      &:hover {
-        text-decoration:underline;
-      }
-    }
-  
-      & &-logo {
-        font-size: rem(20px);
-        line-height: rem($base-unit * 6);
-        font-weight: 500;
-  
-        @media screen and (max-width:$tablet) {
-          display:none;
-        }
-      }
-  
-      & &-logomobile {
-        display:none;    
-        @media screen and (max-width:$tablet) {
-          flex:0 0 rem(46px);
-          display: block;
-          width:rem(46px);
-          height:rem(46px);
-        }
-      }
-
     & &-list {
       display: flex;
       overflow: auto;

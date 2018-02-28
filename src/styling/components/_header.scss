@@ -12,7 +12,7 @@ $slideinlenght:100%;
 
 @mixin slidein {
   animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
+  animation-fill-mode:both;
 }
 
 
@@ -116,10 +116,12 @@ $slideinlenght:100%;
     & &-herodisplay2 {
       grid-row: 3 / 4;
       z-index: 1;
+      animation-delay: .2s;
     }
 
     & &-herodisplay3 {
       grid-row: 4 / 5;
+      animation-delay: .4s;
     }
 
     & &-herocopy {

@@ -1,0 +1,30 @@
+.c-logo-link {
+
+  display: flex;
+  align-items: center;
+
+  text-decoration:none;
+
+  & &-img {
+    width:rem(46px);
+    height:rem(46px);
+  }
+
+  & &-copy {
+    font-size: rem(20px);
+    font-weight: 500;
+    margin-left: $base-unit;
+    color: $primary-text-d;
+    
+    outline:none;
+    @include focus;
+
+    @media screen and (max-width:$tablet) {
+      display:none;
+    }
+    
+    &:hover {
+      text-decoration:underline;
+    }
+  }
+}
