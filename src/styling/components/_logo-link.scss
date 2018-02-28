@@ -14,7 +14,7 @@
     font-size: rem(20px);
     font-weight: 500;
     margin-left: $base-unit;
-    color: $primary-text-d;
+    color: currentColor;
     
     outline:none;
     @include focus;

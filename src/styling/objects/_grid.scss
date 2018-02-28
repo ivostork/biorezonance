@@ -21,7 +21,3 @@ $grid-gutter:rem($base-unit*2);
   padding-left:$grid-padding;
   padding-right: $grid-padding;
 }
-
-.o-grid-container2 {
-  @include container;
-}

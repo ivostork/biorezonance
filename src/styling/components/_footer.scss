@@ -1,0 +1,26 @@
+.c-footer {
+  background-color:$primary-text-d;
+  color:$primary-text-l;
+
+  & &-container {
+    @include container;
+  }
+
+    & &-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+        "a b";
+    }
+
+      & &-info {
+        grid-area: a;
+        padding: rem(32px);
+      }
+
+      & &-links {
+        grid-area: b;
+        justify-self: end;
+        padding: rem(32px);
+      }
+}
