@@ -4,23 +4,38 @@
 
   & &-container {
     @include container;
+    padding: rem(32px);
   }
 
     & &-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: 
-        "a b";
+        "a b"
+        "c d";
     }
 
-      & &-info {
-        grid-area: a;
-        padding: rem(32px);
+      & &-logo {
+        grid-area: a;        
       }
 
       & &-links {
         grid-area: b;
         justify-self: end;
-        padding: rem(32px);
+      }
+
+      & &-info-owner {
+        grid-area: c;
+      }
+
+        & &-info-copy {        
+          span {
+            color:$secondary-text-l;
+          }
+        }
+
+      & &-info-developer {
+        grid-area: d;
+        justify-self: end;
       }
 }

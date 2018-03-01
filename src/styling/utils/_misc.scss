@@ -1,4 +1,5 @@
-.u-sr-only { /* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+/* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+@mixin sr-only {
   position: absolute !important;
   height: 1px; width: 1px; 
   overflow: hidden;
@@ -6,8 +7,7 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-.u-no-focus {
-  &:focus {
-    outline:none;
-  }
+
+.u-sr-only { 
+  @include sr-only;
 }
