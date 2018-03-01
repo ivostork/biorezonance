@@ -11,15 +11,15 @@
       .c-section-contact-grid
         .c-form-group.c-section-contact-name
           label(for="name") Jméno
-          input(type="text" id="name")
+          input(type="text" id="name" required)
         
         .c-form-group.c-section-contact-email
           label(for="email") Email
-          input(type="text" id="email")
+          input(type="email" id="email" required)
 
         .c-form-group.c-section-contact-message
           label(for="message") Zpráva
-          textarea(id="message" class="u-mb-24")
+          textarea(id="message" class="u-mb-24" required)
 
           input(type="submit" class="btn-primary" value="ODEŠLI")
 

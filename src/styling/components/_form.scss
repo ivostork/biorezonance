@@ -4,10 +4,12 @@
     margin-bottom:rem(8px);
   }
   
-  input[type="text"] {
+  input[type="text"],
+  input[type="email"] {
     height:rem(44px);
   }
 
+  input[type="email"],
   input[type="text"],
   textarea {
     width:100%;
@@ -16,6 +18,10 @@
   
     background:$background1;
     border:1px solid $divider-d;
+
+    &:invalid {
+      border:3px solid red;
+    }
   }  
 
   textarea {
