@@ -1,0 +1,29 @@
+@mixin link-icon-structure {
+  width:rem(44px);
+  height:rem(44px);
+  fill:$hint-text-l;
+
+  transition: fill .3s;
+}
+
+[class^="c-link-icon-"] {
+  @include link-icon-structure;  
+}
+
+.c-link-icon-twitter {
+  &:hover {
+    fill:#4099FF;
+  }
+}
+
+.c-link-icon-linkedin {
+  &:hover {
+    fill:#007BB6;
+  }
+}
+
+.c-link-icon-facebook {
+  &:hover {
+    fill:#3B5998;    
+  }
+}
