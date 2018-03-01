@@ -115,4 +115,18 @@ function initMap() {
   });
 }
 
+function fillContactForm() {
+  let dataMessage = document.querySelector('[data-message]');
+  dataMessage.textContent = "Dobrý den, mám předběžný zájem o nabídku - "+this.getAttribute('data-button');
+}
+
+let priceButtons = document.querySelectorAll('[data-button]');
+for (var i = 0; i < priceButtons.length; i++) { 
+  priceButtons[i].addEventListener('click', fillContactForm);
+}
+
+
+
 window.initMap = initMap;
+
+
