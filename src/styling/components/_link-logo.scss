@@ -1,5 +1,7 @@
 .c-link-logo {
 
+  @include focus;
+
   display: flex;
   align-items: center;
 

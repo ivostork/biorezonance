@@ -6,9 +6,19 @@
   transition: fill .3s;
 }
 
-[class^="c-link-icon-"] {
-  @include link-icon-structure;  
+a {
+  [class^="c-link-icon-"] {
+    @include link-icon-structure;  
+  }
+  
+  &:focus {
+    outline:none;
+    [class^="c-link-icon-"] {
+      fill:$yellow;
+    }
+  }
 }
+
 
 .c-link-icon-twitter {
   &:hover {
