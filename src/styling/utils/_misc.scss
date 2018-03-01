@@ -7,7 +7,12 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-
 .u-sr-only { 
   @include sr-only;
+}
+
+.u-no-focus {
+  &:focus {
+    outline:none;
+  }
 }
