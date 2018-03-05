@@ -27,14 +27,15 @@ module.exports = merge(common, {
           {
             loader:'html-loader',
             options: {
-              attrs:['img:src', 'source:data-src1','source:data-src2']
+              attrs:['link:href','img:src', 'source:data-src1','source:data-src2']
             }
           },         
           {
             loader:'pug-html-loader',
             options: {
               data:{
-                imgUrl:'./content/img/'
+                imgUrl:'./content/img/',
+                imgUrl2:'./content/img/'
               }
             }        
           }

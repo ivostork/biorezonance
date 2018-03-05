@@ -32,14 +32,20 @@ module.exports = merge(common, {
       {
         test: /\.pug$/,
         use: [
-          'html-loader',
+          {
+            loader:'html-loader',
+            options: {
+              attrs:['link:href','img:src', 'source:data-src1','source:data-src2']
+            }
+          },         
           {
             loader:'pug-html-loader',
             options: {
-              data: {
-                imgUrl: './content/img/'
+              data:{
+                imgUrl:'./content/img/',
+                imgUrl2:'./img/'
               }
-            }            
+            }        
           }
         ]
       },
@@ -64,17 +70,14 @@ module.exports = merge(common, {
         })
       },
       {
-        test: /\.(gif|png|jpe?g|svg|webp)$/i,
+        test: /\.(gif|png|jpe?g|svg|webp)$/,
         use: [
           {
             loader:'file-loader',
             options:{
               name:'img/[name].[ext]'
             }
-          },
-          {
-            loader: 'image-webpack-loader'
-          },
+          }
         ],
       }
     ]
