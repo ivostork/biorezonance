@@ -121,10 +121,10 @@ function fillContactForm() {
 }
 
 let priceButtons = document.querySelectorAll('[data-button]');
-for (var i = 0; i < priceButtons.length; i++) { 
-  priceButtons[i].addEventListener('click', fillContactForm);
-}
 
+priceButtons.forEach(link => {
+  link.addEventListener('click', fillContactForm);
+});
 
 
 window.initMap = initMap;
