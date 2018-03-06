@@ -1,6 +1,5 @@
 const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -19,7 +18,6 @@ module.exports = merge(common, {
       },
       hash: true
     }),
-    new MinifyPlugin(),
     new UglifyJSPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
