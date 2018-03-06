@@ -15,11 +15,11 @@ module.exports = {
   },
   module: {
     rules: [      
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   use: 'babel-loader'
+      // },
       {
         test: /\.(woff|woff2)$/,
         use: 'file-loader?name=fonts/[name].[ext]'
