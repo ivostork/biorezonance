@@ -35,15 +35,21 @@
   }
   
   & &-card1 {
+    -ms-grid-column-span:1;
+    -ms-grid-column:2;
     grid-area: a;
   }
 
   & &-card2 {
+    -ms-grid-column-span:1;
+    -ms-grid-column:3;
     grid-area:b;
     box-shadow:box-shadow24dp();    
   }
 
   & &-card3 {
+    -ms-grid-column-span:1;
+    -ms-grid-column:4;
     grid-area:c;
   }
     & &-action {
@@ -94,12 +100,8 @@
           color:$secondary-text-d;
         }
 
-
-
-
-
     & &-action {
-      flex:0 0 1px;
+      flex:0 0 auto;
     }  
 
     

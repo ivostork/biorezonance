@@ -65,14 +65,22 @@
     }
 
       & &-name {
-        grid-area: a;
+        -ms-grid-column-span:1;
+        -ms-grid-column:2;
+        grid-area: a;        
       }
 
       & &-email {
+        -ms-grid-column-span:1;
+        -ms-grid-column:3;
         grid-area: b;
       }
 
       & &-message {
+        -ms-grid-column-span:2;
+        -ms-grid-column:2;
+        -ms-grid-row-span:1;
+        -ms-grid-row:2;
         grid-area: c;
       }    
 
@@ -88,8 +96,11 @@
     }
     
       & &-address {
+        -ms-grid-column-span:1;
+        -ms-grid-column:1;
+
         background-color:$yellow;
-        padding: rem(32px);
+        padding: rem(32px);        
       }
 
         & &-subheading {
@@ -112,4 +123,8 @@
           & &-person {
             color:$primary-text-d;
           }
+    & &-map {
+      -ms-grid-column-span:1;
+      -ms-grid-column:2;
+    }
 }

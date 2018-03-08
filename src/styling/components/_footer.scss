@@ -23,11 +23,15 @@
     }
 
       & &-logo {
+        -ms-grid-column-span:1;
+        -ms-grid-column:1;
         grid-area: a;        
         justify-self: start;
       }
 
       & &-links {
+        -ms-grid-column-span:1;
+        -ms-grid-column:2;
         grid-area: b;
         justify-self: end;
 
@@ -39,6 +43,10 @@
       }
 
       & &-info-owner {
+        -ms-grid-column-span:1;
+        -ms-grid-column:1;
+        -ms-grid-row-span:1;
+        -ms-grid-row:2;
         grid-area: c;
         font-size: rem(12px);
       }
@@ -50,6 +58,10 @@
         }
 
       & &-info-developer {
+        -ms-grid-column-span:1;
+        -ms-grid-column:2;
+        -ms-grid-row-span:1;
+        -ms-grid-row:2;
         grid-area: d;
         justify-self: end;
         align-self: end;

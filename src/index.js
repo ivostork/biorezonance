@@ -1,7 +1,5 @@
 import './styling/index.scss';
-
-
-
+  
 function initMap() {
   var uluru = {lat: 49.223189, lng: 16.627060};
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -105,7 +103,7 @@ function initMap() {
         fillColor: color,
         fillOpacity: 1,
         scale: 1,
-   };
+    };
   }
 
   var marker = new google.maps.Marker({
@@ -115,18 +113,29 @@ function initMap() {
   });
 }
 
+//this doesn't work in Internet Explorer 11
+window.onload = initMap;
+
 function fillContactForm() {
-  let dataMessage = document.querySelector('[data-message]');
+  var dataMessage = document.querySelector('[data-message]');
   dataMessage.textContent = "Dobrý den, mám předběžný zájem o nabídku - "+this.getAttribute('data-button');
 }
 
-let priceButtons = document.querySelectorAll('[data-button]');
+var priceButtons = document.querySelectorAll('[data-button]');
 
 for (var i = 0; i < priceButtons.length; i++) { 
   priceButtons[i].addEventListener('click', fillContactForm); 
 }
 
 
-window.initMap = initMap;
+
+
+
+
+
+
+
+
+
 
 
