@@ -1,15 +1,24 @@
 const merge = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.common.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = merge(common, {
   entry: {
     app: './src/index.js',
-    index:'./src/index.pug' //for pug reload
+    pugreload:'./src/index.pug'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins:[
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.pug',
+      inject: false
+    })
   ],
   devtool: 'inline-source-map',
   devServer: {
@@ -24,21 +33,9 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.pug$/,
-        use: [
+        use: [      
           {
-            loader:'html-loader',
-            options: {
-              attrs:['link:href','img:src', 'source:data-src1','source:data-src2']
-            }
-          },         
-          {
-            loader:'pug-html-loader',
-            options: {
-              data:{
-                imgUrl:'./content/img/',
-                imgUrl2:'./content/img/'
-              }
-            }        
+            loader:'pug-loader'       
           }
         ]
       },
@@ -46,7 +43,7 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader',           
+          'css-loader', 
           { loader: 'postcss-loader', options: { sourceMap: true }},
           { loader: "sass-loader", options: { sourceMap: true }}
         ]
@@ -57,7 +54,8 @@ module.exports = merge(common, {
           {       
             loader:'file-loader',
             options:{
-              name:'./content/img/[name].[ext]'
+              name:'[name].[hash].[ext]',
+              publicPath:''
             }
           }
         ]

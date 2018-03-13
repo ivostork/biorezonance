@@ -4,10 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      template: './src/index.pug'
-    })
+    new CleanWebpackPlugin(['dist'])    
   ],
   output: {
     filename: '[name].bundle.js',

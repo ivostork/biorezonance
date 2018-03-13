@@ -1,3 +1,8 @@
+- var facemanat2webp = require('../content/img/face1@2.webp')
+- var facemanat1webp = require('../content/img/face1.webp')
+
+- var facemanat2jpg = require('../content/img/face1@2.jpg')
+- var facemanat1jpg = require('../content/img/face1.jpg')
 .c-section-copy
 
   .o-grid-container 
@@ -23,9 +28,9 @@
             li eliminace chuti na sladké a alkohol
 
       .c-section-copy-img
-        picture
-          source(srcset=imgUrl2+'face1.webp, '+imgUrl2+'face1@2.webp 2x' data-src1=imgUrl+'face1.webp' data-src2=imgUrl+'face1@2.webp' type='image/webp')
-          source(srcset=imgUrl2+'face1.jpg, '+imgUrl2+'face1@2.jpg 2x' data-src1=imgUrl+'face1.jpg' data-src2=imgUrl+'face1@2.jpg' type='image/jpg')
-          img(src='./content/img/face1.jpg' type='image/jpg') 
+        picture 
+          source(srcset=facemanat1webp+', '+facemanat2webp+' 2x' type='image/webp')
+          source(srcset=facemanat1jpg+' , '+facemanat2jpg+' 2x' type='image/jpg')
+          img(src=facemanat1jpg type='image/jpg') 
         
         

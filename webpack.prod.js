@@ -1,4 +1,5 @@
 const merge = require('webpack-merge');
+const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,15 +10,19 @@ module.exports = merge(common, {
   entry: {
     app: './src/index.js'
   },
-  plugins: [
-    new ExtractTextPlugin('style.css'),
+  output: {
+    filename: '[name].[chunkhash].js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  plugins: [    
     new HtmlWebpackPlugin({
       template: './src/index.pug',
       minify: {
         collapseWhitespace: true
       },
-      hash: true
+      inject: false
     }),
+    new ExtractTextPlugin('style.[hash].css'),
     new UglifyJSPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -25,25 +30,14 @@ module.exports = merge(common, {
       }
     })
   ],
+  
   module: {
     rules: [
       {
         test: /\.pug$/,
         use: [
           {
-            loader:'html-loader',
-            options: {
-              attrs:['link:href','img:src', 'source:data-src1','source:data-src2']
-            }
-          },         
-          {
-            loader:'pug-html-loader',
-            options: {
-              data:{
-                imgUrl:'./content/img/',
-                imgUrl2:'./img/'
-              }
-            }        
+            loader:'pug-loader'       
           }
         ]
       },
@@ -75,7 +69,8 @@ module.exports = merge(common, {
           {
             loader:'file-loader',
             options:{
-              name:'img/[name].[ext]'
+              name:'[name].[hash].[ext]',
+              publicPath:''
             }
           }
         ],

@@ -1,3 +1,8 @@
+- var facewomanat2webp = require('../content/img/face2@2.webp')
+- var facewomanat1webp = require('../content/img/face2.webp')
+
+- var facewomanat2jpg = require('../content/img/face2@2.jpg')
+- var facewomanat1jpg = require('../content/img/face2.jpg')
 .c-section-copy
 
   .o-grid-container 
@@ -26,10 +31,10 @@
           | Chuť na cigaretu mizí ihned, nebo do několika hodin po zákroku. Nutnost kouření se druhý den ráno většinou již nedostavuje.    
     
       .c-section-copy-img
-        picture
-          source(srcset=imgUrl2+'face2.webp, '+imgUrl2+'face2@2.webp 2x' data-src1=imgUrl+'face2.webp' data-src2=imgUrl+'face2@2.webp' type='image/webp')
-          source(srcset=imgUrl2+'face2.jpg, '+imgUrl2+'face2@2.jpg 2x' data-src1=imgUrl+'face2.jpg' data-src2=imgUrl+'face2@2.jpg' type='image/jpg')
-          img(src='./content/img/face2.jpg' type='image/jpg') 
+        picture 
+          source(srcset=facewomanat1webp+', '+facewomanat2webp+' 2x' type='image/webp')
+          source(srcset=facewomanat1jpg+' , '+facewomanat2jpg+' 2x' type='image/jpg')
+          img(src=facewomanat1jpg type='image/jpg') 
 
       
 

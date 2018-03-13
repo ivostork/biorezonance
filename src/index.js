@@ -1,6 +1,20 @@
 import './styling/index.scss';
-  
-function initMap() {
+
+
+//contact form
+function fillContactForm() {
+  var dataMessage = document.querySelector('[data-message]');
+  dataMessage.textContent = "Dobrý den, mám předběžný zájem o nabídku - "+this.getAttribute('data-button');
+}
+
+var priceButtons = document.querySelectorAll('[data-button]');
+
+for (var i = 0; i < priceButtons.length; i++) { 
+  priceButtons[i].addEventListener('click', fillContactForm); 
+}
+
+//google maps
+window.initMap = function () {
   var uluru = {lat: 49.223189, lng: 16.627060};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 18,
@@ -113,19 +127,7 @@ function initMap() {
   });
 }
 
-//this doesn't work in Internet Explorer 11
-window.onload = initMap;
 
-function fillContactForm() {
-  var dataMessage = document.querySelector('[data-message]');
-  dataMessage.textContent = "Dobrý den, mám předběžný zájem o nabídku - "+this.getAttribute('data-button');
-}
-
-var priceButtons = document.querySelectorAll('[data-button]');
-
-for (var i = 0; i < priceButtons.length; i++) { 
-  priceButtons[i].addEventListener('click', fillContactForm); 
-}
 
 
 
