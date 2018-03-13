@@ -11,10 +11,26 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [      
+    rules: [   
       {
-        test: /\.(woff|woff2)$/,
-        use: 'file-loader?name=fonts/[name].[ext]'
+        test: /\.pug$/,
+        use: [      
+          {
+            loader:'pug-loader'       
+          }
+        ]
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg|webp)$/,
+        use: [
+          {
+            loader:'file-loader',
+            options:{
+              name:'[name].[hash].[ext]',
+              publicPath:''
+            }
+          }
+        ],
       }
     ]
   }

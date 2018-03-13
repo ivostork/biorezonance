@@ -1,5 +1,4 @@
 const merge = require('webpack-merge');
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,10 +8,6 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   entry: {
     app: './src/index.js'
-  },
-  output: {
-    filename: '[name].[chunkhash].js',
-    path: path.resolve(__dirname, 'dist')
   },
   plugins: [    
     new HtmlWebpackPlugin({
@@ -34,14 +29,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.pug$/,
-        use: [
-          {
-            loader:'pug-loader'       
-          }
-        ]
-      },
-      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -62,18 +49,6 @@ module.exports = merge(common, {
             }
           }]
         })
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg|webp)$/,
-        use: [
-          {
-            loader:'file-loader',
-            options:{
-              name:'[name].[hash].[ext]',
-              publicPath:''
-            }
-          }
-        ],
       }
     ]
   }
