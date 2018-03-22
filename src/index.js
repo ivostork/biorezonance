@@ -1,6 +1,5 @@
 import './styling/index.scss';
 
-
 //contact form
 function fillContactForm() {
   var dataMessage = document.querySelector('[data-message]');
