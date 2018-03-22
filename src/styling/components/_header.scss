@@ -1,18 +1,42 @@
-$slideinlenght:100%;
+$slideinlenght:200%;
 
-@keyframes slideinFromRight {
-  from {
-    transform:translateX(#{$slideinlenght});
+@keyframes slideinFromLeft {
+  0% {
+    transform:translateX(-#{$slideinlenght});
+    opacity:0;
   }
 
-  to {
+  33% {
+    opacity:0.5;
+  }
+
+  100% {
+    transform:translateX(20%);
+    opacity:1;
+  }
+}
+
+@keyframes slideinFromRight {
+  0% {
+    transform:translateX(#{$slideinlenght});
+    opacity:0;
+  }
+
+  33% {
+    opacity:0.5;
+  }
+
+  100% {
     transform:translateX(0%);
+    opacity:1;
   }
 }
 
 @mixin slidein {
   animation-timing-function: ease-in;
   animation-fill-mode:both;
+  animation-duration: 200ms;
+  animation-delay: 15ms;
 }
 
 
@@ -31,12 +55,11 @@ $slideinlenght:100%;
     padding-left:0;
     padding-right:0;
     position: relative;
-    z-index: 1;
   }
       
     & &-row{
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 1fr 1fr;
 
       @media screen and (max-width:$desktop-sm) {
         display: block;
@@ -56,12 +79,11 @@ $slideinlenght:100%;
       img {
         max-height: calc(100vh - #{rem(8*$base-unit)});
         max-width: 100%;
-        margin-left:20%;
+        //margin-left:20%;
         
 
-        animation-name: slideinFromRight;        
-        @include slidein;
-        animation-duration: .4s;
+        animation-name: slideinFromLeft;        
+        @include slidein;        
                 
         @media screen and (max-width:$desktop-sm) {
           max-width:none;
@@ -92,7 +114,6 @@ $slideinlenght:100%;
 
       animation-name: slideinFromRight;
       @include slidein;
-      animation-duration: .8s;
 
       @media screen and (max-width:$desktop-sm) {
         animation: none;
@@ -103,9 +124,6 @@ $slideinlenght:100%;
           display: inline-block;
           background-color: $yellow;
           line-height: 1;
-
-          margin-left:3%;
-          text-indent: -3%;
         }
     }
 
@@ -116,12 +134,10 @@ $slideinlenght:100%;
     & &-herodisplay2 {
       grid-row: 3 / span 1;
       z-index: 1;
-      animation-delay: .2s;
     }
 
     & &-herodisplay3 {
       grid-row: 4 / span 1;
-      animation-delay: .4s;
     }
 
     & &-herocopy {
