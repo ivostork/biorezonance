@@ -1,42 +1,21 @@
-$slideinlenght:150%;
-
-@keyframes slideinFromLeft {
+@keyframes fadeIn {
   0% {
-    transform:translateX(-#{$slideinlenght});
     opacity:0;
-  }
-
-  33% {
-    opacity:0.5;
+    transform:scale(.8);
   }
 
   100% {
-    transform:translateX(0%);
     opacity:1;
+    transform:scale(1);
   }
 }
 
-@keyframes slideinFromRight {
-  0% {
-    transform:translateX(#{$slideinlenght});
-    opacity:0;
-  }
-
-  33% {
-    opacity:0.5;
-  }
-
-  100% {
-    transform:translateX(0%);
-    opacity:1;
-  }
-}
-
-@mixin slidein {
-  animation-timing-function: ease-in;
-  animation-fill-mode:both;
-  animation-duration: 200ms;
-  animation-delay: 15ms;
+@mixin fadeInAnimation {
+  animation-name:fadeIn;
+  animation-delay:8ms;
+  animation-fill-mode: forwards;
+  //easy out
+  animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
 
 
@@ -83,8 +62,8 @@ $slideinlenght:150%;
         margin-left:20%;
         
 
-        animation-name: slideinFromLeft;        
-        @include slidein;        
+        @include fadeInAnimation;
+        animation-duration: 150ms;
                 
         @media screen and (max-width:$desktop-sm) {
           max-width:none;
@@ -113,8 +92,7 @@ $slideinlenght:150%;
       line-height: 1;
       text-shadow: text-shadow24dp();      
 
-      animation-name: slideinFromRight;
-      @include slidein;
+      @include fadeInAnimation;      
 
       @media screen and (max-width:$desktop-sm) {
         animation: none;
@@ -129,17 +107,20 @@ $slideinlenght:150%;
     }
 
     & &-herodisplay1 {
-      grid-row: 2 / span 1;      
+      grid-row: 2 / span 1;  
+      animation-duration: 250ms;    
     }
 
     & &-herodisplay2 {
       grid-row: 3 / span 1;
       z-index: 1;
       margin-left:-24px;
+      animation-duration: 350ms;    
     }
 
     & &-herodisplay3 {
       grid-row: 4 / span 1;
+      animation-duration: 450ms;    
     }
 
     & &-herocopy {
