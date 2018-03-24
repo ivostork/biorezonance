@@ -1,7 +1,7 @@
 @keyframes fadeIn {
   0% {
     opacity:0;
-    transform:scale(.8);
+    transform:scale(.5);
   }
 
   100% {
@@ -12,8 +12,8 @@
 
 @mixin fadeInAnimation {
   animation-name:fadeIn;
-  animation-delay:8ms;
-  animation-fill-mode: forwards;
+  animation-delay:350ms;
+  animation-fill-mode: both;
   //easy out
   animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
 }
@@ -63,7 +63,7 @@
         
 
         @include fadeInAnimation;
-        animation-duration: 150ms;
+        animation-duration: 250ms;
                 
         @media screen and (max-width:$desktop-sm) {
           max-width:none;
