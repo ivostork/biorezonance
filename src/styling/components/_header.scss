@@ -90,7 +90,8 @@
       font-size:rem(112px);
       font-weight:bold;
       line-height: 1;
-      text-shadow: text-shadow24dp();      
+      text-shadow: text-shadow24dp();   
+      margin-left:rem(-24px);   
 
       @include fadeInAnimation;      
 
@@ -114,7 +115,6 @@
     & &-herodisplay2 {
       grid-row: 3 / span 1;
       z-index: 1;
-      margin-left:-24px;
       animation-duration: 350ms;    
     }
 
