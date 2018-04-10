@@ -1,4 +1,5 @@
 import './styling/index.scss';
+import './content/favicons/favicons';
 
 //contact form
 function fillContactForm() {
